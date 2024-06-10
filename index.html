@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Management</title>
+</head>
+<body>
+    <h1>User Management System</h1>
+
+    <h2>Add New User</h2>
+    <form action="/add" method="POST">
+        Name: <input type="text" name="name" required><br>
+        Age: <input type="number" name="age" required><br>
+        Email: <input type="email" name="email" required><br>
+        Phone: <input type="text" name="phone" required><br>
+        City: <input type="text" name="city" required><br>
+        <button type="submit">Add User</button>
+    </form>
+
+    <h2>All Users</h2>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>City</th>
+            <th>Actions</th>
+        </tr>
+        
+        <tr>
+            <td>1</td>
+            <td>John Doe</td>
+            <td>30</td>
+            <td>john@example.com</td>
+            <td>123456789</td>
+            <td>New York</td>
+            <td>
+                <form action="/delete/1" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+                <button onclick="document.getElementById('edit-form-1').style.display='block';">Edit</button>
+                <div id="edit-form-1" style="display:none;">
+                    <form action="/edit/1" method="POST">
+                        Name: <input type="text" name="name" value="John Doe" required><br>
+                        Age: <input type="number" name="age" value="30" required><br>
+                        Email: <input type="email" name="email" value="john@example.com" required><br>
+                        Phone: <input type="text" name="phone" value="123456789" required><br>
+                        City: <input type="text" name="city" value="New York" required><br>
+                        <button type="submit">Save</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>2</td>
+            <td>Jane Smith</td>
+            <td>25</td>
+            <td>jane@example.com</td>
+            <td>987654321</td>
+            <td>Los Angeles</td>
+            <td>
+                <form action="/delete/2" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+                <button onclick="document.getElementById('edit-form-2').style.display='block';">Edit</button>
+                <div id="edit-form-2" style="display:none;">
+                    <form action="/edit/2" method="POST">
+                        Name: <input type="text" name="name" value="Jane Smith" required><br>
+                        Age: <input type="number" name="age" value="25" required><br>
+                        Email: <input type="email" name="email" value="jane@example.com" required><br>
+                        Phone: <input type="text" name="phone" value="987654321" required><br>
+                        City: <input type="text" name="city" value="Los Angeles" required><br>
+                        <button type="submit">Save</button>
+                    </form>
+                </div>
+            </td>
+        </tr>
+        
+    </table>
+</body>
+</html>
